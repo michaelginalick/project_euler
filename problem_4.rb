@@ -4,9 +4,11 @@
 
 def palindrome?(product)
 	product = product.to_s.chars
-	
-	product.each_with_index do |value, index|
-		return false if product.length-1 - (index-1) != value
+	reverse_prod = product.reverse
+	if product != reverse_prod
+		return false
+	else
+		return true
 	end
 end
 
@@ -25,17 +27,6 @@ end
 
 p largest_number
 
-
-# def test?
-#  x = [5,6,7,8,9]
-
-#  x.each_with_index do |value, index|
-#  	 return false if x.length-1 - (index-1) != value
-#  end
-#  true
-# end
-
-# p test?
 
 
 
