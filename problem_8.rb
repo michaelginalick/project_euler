@@ -20,8 +20,30 @@ array = '73167176531330624919225119674426574742355349194934
 71636269561882670428252483600823257530420752963450'
 
 def put_commas(array)
-	array.chars.map(&:to_i).each_cons(13).map{|num| num.inject(:*) }.max
+	p array.chars.map(&:to_i).each_cons(13).map{|num| num.inject(:*) }.max
 end
 
-p put_commas(array)
+put_commas(array)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
