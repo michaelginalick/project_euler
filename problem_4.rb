@@ -32,13 +32,14 @@
 
 
 
-x = [5,6,7,8,9]
+x = [5,6,7,6,5]
 
 x.each_with_index do |value, index|
-	if value == x[x.length-1 - index]
-		p "I am here " + value.to_s
-	end
- end
+	 if value == x[x.length-1 -(index)]
+	 	puts "I am here"
+	 end
+	
+end
 
 
 
