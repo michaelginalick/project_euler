@@ -28,7 +28,7 @@ end
  
 def primes(upto)
   a = []
-  (2..upto).each { |i| a << i if prime? i ; puts i }
+  (2..upto).each { |i| a << i if prime?(i) ; puts i }
   a
 end
  
@@ -36,4 +36,4 @@ def array_sum(a)
   a.inject(:+)
 end
  
-puts "#{array_sum primes x}"
+puts "#{array_sum(primes(x))}"
