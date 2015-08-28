@@ -5,11 +5,7 @@
  def palindrome?(product)
  	x = product.to_s.chars
 	 x.each_with_index do |value, index|
-		 if value != x[x.length-1 - (index)]
-		 	return false
-		 else
-		 	next
-		 end
+		 return false if value != x[x.length-1 - (index)]
 	end
  end
 
