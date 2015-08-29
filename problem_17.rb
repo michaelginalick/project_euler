@@ -24,6 +24,12 @@ NUM_HASH = {
 	"eleven" => 6,
 	"twelve" => 6,
 	"thirteen" => 8,
+	"fourteen" => 8,
+	"fifteen" => 7,
+	"sixteen" => 7,
+	"seventeen" => 9,
+	"eighteen" => 8,
+	"nineteen" => 8,
 	"twenty" => 6,
 	"thirty" => 6,
 	"forty" => 5,
@@ -39,13 +45,9 @@ NUM_HASH = {
 
 
 def letters
-
-	1.upto(1000) do |i|
-		
-	end
-
-
+	sum = 0 
 end
 
+letters
 
 
