@@ -11,43 +11,52 @@
 
 NUM_HASH = {
 
-	"one" => 3,
-	"two" => 3,
-	"three" => 5,
-	"four" => 4,
-	"five" => 4,
-	"six" => 3,
-	"seven" => 5,
-	"eight" => 5,
-	"nine" => 4,
-	"ten" => 3,
-	"eleven" => 6,
-	"twelve" => 6,
-	"thirteen" => 8,
-	"fourteen" => 8,
-	"fifteen" => 7,
-	"sixteen" => 7,
-	"seventeen" => 9,
-	"eighteen" => 8,
-	"nineteen" => 8,
-	"twenty" => 6,
-	"thirty" => 6,
-	"forty" => 5,
-	"fifty" => 5,
-	"sixty" => 5,
-	"seventy" => 7,
-	"eighty" => 6,
-	"ninety" => 6,
-	"hundred" => 7,
-	"thousand" => 8
-
+	1 => "one",
+	2 => "two",
+	3 => "three",
+	4 => "four",
+	5 => "five",
+	6 => "six",
+	7 => "seven",
+	8 => "eight",
+	9 => "nine",
+	10 => "ten",
+	11 => "eleven",
+	12 => "tweleve",
+	13 => "thirteen",
+	14 => "fourteen",
+	15 => "fifteen",
+	16 => "sixteen",
+	17 => "seventeen",
+	18 => "eighteen",
+	19 => "nineteen",
+	20 => "twenty",
+	30 => "thirty",
+	40 => "fourty",
+	50 => "fifty",
+	60 => "sixty",
+	70 => "seventy",
+	80 => "eighty",
+	90 => "ninety",
+	100 => "hundred",
+	1000 => "thousand"
 }
 
 
 def letters
-	sum = 0 
+	letter_count = 0
+	for i in 1..5 do
+		letter_count += NUM_HASH[i].length
+	end
+	p letter_count
 end
 
 letters
+
+
+
+
+
+
 
 
