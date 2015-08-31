@@ -1,57 +1,82 @@
-#If the numbers 1 to 5 are written out in words: 
-#one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+# #If the numbers 1 to 5 are written out in words: 
+# #one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
 
-#If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, 
-#how many letters would be used?
-
-
-#NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) 
-#contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. 
-#The use of "and" when writing out numbers is in compliance with British usage.
-
-NUM_HASH = {
-
-	1 => "one",
-	2 => "two",
-	3 => "three",
-	4 => "four",
-	5 => "five",
-	6 => "six",
-	7 => "seven",
-	8 => "eight",
-	9 => "nine",
-	10 => "ten",
-	11 => "eleven",
-	12 => "tweleve",
-	13 => "thirteen",
-	14 => "fourteen",
-	15 => "fifteen",
-	16 => "sixteen",
-	17 => "seventeen",
-	18 => "eighteen",
-	19 => "nineteen",
-	20 => "twenty",
-	30 => "thirty",
-	40 => "fourty",
-	50 => "fifty",
-	60 => "sixty",
-	70 => "seventy",
-	80 => "eighty",
-	90 => "ninety",
-	100 => "hundred",
-	1000 => "thousand"
-}
+# #If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, 
+# #how many letters would be used?
 
 
-def letters
-	letter_count = 0
-	for i in 1..5 do
-		letter_count += NUM_HASH[i].length
-	end
-	p letter_count
+# #NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) 
+# #contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. 
+# #The use of "and" when writing out numbers is in compliance with British usage.
+
+# NUM_HASH = {
+
+# 	1 => "one",
+# 	2 => "two",
+# 	3 => "three",
+# 	4 => "four",
+# 	5 => "five",
+# 	6 => "six",
+# 	7 => "seven",
+# 	8 => "eight",
+# 	9 => "nine",
+# 	10 => "ten",
+# 	11 => "eleven",
+# 	12 => "tweleve",
+# 	13 => "thirteen",
+# 	14 => "fourteen",
+# 	15 => "fifteen",
+# 	16 => "sixteen",
+# 	17 => "seventeen",
+# 	18 => "eighteen",
+# 	19 => "nineteen",
+# 	20 => "twenty",
+# 	30 => "thirty",
+# 	40 => "fourty",
+# 	50 => "fifty",
+# 	60 => "sixty",
+# 	70 => "seventy",
+# 	80 => "eighty",
+# 	90 => "ninety",
+# 	100 => "hundred",
+# 	1000 => "thousand"
+# }
+
+
+#21124
+NUM_HASH = { 1 => "one",2 => "two",3 => "three",4 => "four",5 => "five",
+6 => "six",7 => "seven",8 => "eight",9 => "nine",10 => "ten",11 => "eleven",12 => "twelve",
+13 => "thirteen",14 => "fourteen",15 => "fifteen",16 => "sixteen",17 => "seventeen",
+18 => "eighteen",19 => "nineteen",20 => "twenty",30 => "thirty",40 => "forty",50 => "fifty",
+60 => "sixty",70 => "seventy",80 => "eighty",90 => "ninety",100 => "hundred",
+1000 => "thousand",0 => "" }
+count = 0;
+
+def one_to_ninetynine(base)
+  icount = 0
+  for i in 1..19 do
+    icount += base + NUM_HASH[i].length
+  end
+  j = 10
+  until j == 90
+    j += 10
+    icount += base + NUM_HASH[j].length
+    for k in 1..9 do
+      icount += base + NUM_HASH[j].length + NUM_HASH[k].length
+    end
+  end
+  icount
 end
 
-letters
+count += one_to_ninetynine(0)
+
+for l in 1..9 do
+  count += NUM_HASH[l].length + (NUM_HASH[100].length)
+  count += one_to_ninetynine(NUM_HASH[l].length + (NUM_HASH[100].length) + 3)
+end
+count += NUM_HASH[1].length + NUM_HASH[1000].length
+
+puts count
 
 
 
